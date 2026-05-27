@@ -1,0 +1,40 @@
+{
+  "event_id": "016_001",
+  "folder": "0.5v 633nm 6mw thru turret-3",
+  "session": "016",
+  "initial_label": "true_blink",
+  "coarse_window": [65.11, 65.4],
+  "refined_current_window": [65.1108, 65.422],
+  "refined_raman_window": [65.13718, 65.46278],
+  "core_window": [65.13718, 65.422],
+  "tail_window": [65.282, 65.46278],
+  "lag_estimate_s": 0.02638,
+  "lead_channel": "current",
+  "observed_local_lag_s": 0.02638,
+  "absolute_lag_uncertain": true,
+  "offset_stability_unknown": true,
+  "shoulder_flag": false,
+  "split_suggestion": "keep_single_event",
+  "confidence": 0.73,
+  "criticisms": [
+    {
+      "issue": "synchronization_uncertainty",
+      "detail": "Independent acquisition clocks and potential timestamp drift make onset lag approximate, not absolute."
+    },
+    {
+      "issue": "tail_interpretation_uncertain",
+      "detail": "Late decay/tail likely includes internal substate structure; avoid hard split without full reset evidence."
+    }
+  ],
+  "notes": [
+    "Current and Raman boundaries were refined independently from local morphology.",
+    "Temporal overlap is strong in the event core; onset lead/lag is treated as local tendency.",
+    "Provided visualization supports sustained Raman enhancement during conductance plateau regime."
+  ],
+  "analysis_metadata": {
+    "conductance_dt_s": 0.0002,
+    "raman_dt_s": 0.0088,
+    "conductance_points_in_coarse": 1451,
+    "raman_frames_in_coarse": 33
+  }
+}

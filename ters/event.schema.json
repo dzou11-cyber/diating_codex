@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/event.schema.json",
+  "title": "Blink Event Schema",
+  "description": "Initial schema for one correlated Raman-conductance blink event (v0).",
+  "type": "object",
+  "required": [
+    "event_id",
+    "folder",
+    "session",
+    "initial_label",
+    "coarse_window",
+    "refined_current_window",
+    "refined_raman_window",
+    "core_window",
+    "tail_window",
+    "lag_estimate_s",
+    "lead_channel",
+    "shoulder_flag",
+    "split_suggestion",
+    "confidence",
+    "criticisms",
+    "notes"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^[0-9]{3}_[0-9]{3}$",
+      "description": "Canonical event identifier, e.g. 016_001."
+    },
+    "folder": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session": {
+      "type": "string",
+      "pattern": "^[0-9]{3}$",
+      "description": "Session code as zero-padded string, e.g. 016."
+    },
+    "initial_label": {
+      "type": "string",
+      "enum": [
+        "true_blink",
+        "plateau_only",
+        "raman_only",
+        "noisy_state",
+        "artifact",
+        "uncertain"
+      ]
+    },
+    "coarse_window": {
+      "$ref": "#/$defs/time_window"
+    },
+    "refined_current_window": {
+      "$ref": "#/$defs/time_window"
+    },
+    "refined_raman_window": {
+      "$ref": "#/$defs/time_window"
+    },
+    "core_window": {
+      "$ref": "#/$defs/time_window"
+    },
+    "tail_window": {
+      "$ref": "#/$defs/time_window"
+    },
+    "lag_estimate_s": {
+      "type": "number",
+      "description": "Positive means current leads Raman by this many seconds."
+    },
+    "observed_local_lag_s": {
+      "type": "number",
+      "description": "Local apparent lag estimate; do not interpret as strict absolute synchronization."
+    },
+    "absolute_lag_uncertain": {
+      "type": "boolean",
+      "description": "True when clock offset/drift uncertainty makes absolute lag interpretation unreliable."
+    },
+    "offset_stability_unknown": {
+      "type": "boolean",
+      "description": "True when inter-system offset stability is not validated for this event."
+    },
+    "lead_channel": {
+      "type": "string",
+      "enum": [
+        "current",
+        "raman",
+        "none",
+        "uncertain"
+      ]
+    },
+    "shoulder_flag": {
+      "type": "boolean"
+    },
+    "split_suggestion": {
+      "type": "string",
+      "enum": [
+        "keep_single_event",
+        "split_into_sub_events",
+        "uncertain"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "criticisms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/criticism"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "time_window": {
+      "type": "array",
+      "description": "[start_s, end_s] in seconds.",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false
+    },
+    "criticism": {
+      "type": "object",
+      "required": [
+        "issue",
+        "detail"
+      ],
+      "properties": {
+        "issue": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

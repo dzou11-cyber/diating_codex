@@ -1,0 +1,26 @@
+{
+  "event_id": "016_001",
+  "folder": "0.05 TAPPING MES",
+  "session": "016",
+  "initial_label": "true_blink",
+  "coarse_window": [65.15, 65.40],
+  "refined_current_window": [65.12, 65.445],
+  "refined_raman_window": [65.13, 65.45],
+  "core_window": [65.13, 65.44],
+  "tail_window": [65.40, 65.45],
+  "lag_estimate_s": 0.02,
+  "lead_channel": "current",
+  "shoulder_flag": true,
+  "split_suggestion": "keep_single_event",
+  "confidence": 0.78,
+  "criticisms": [
+    {
+      "issue": "possible_substate",
+      "detail": "Tail plateau may represent a weak substate rather than simple decay."
+    }
+  ],
+  "notes": [
+    "Conductance rises slightly before Raman enhancement.",
+    "No full reset between shoulder and tail."
+  ]
+}

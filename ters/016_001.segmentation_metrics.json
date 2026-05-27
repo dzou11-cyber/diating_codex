@@ -1,0 +1,111 @@
+{
+  "conductance": {
+    "background_baseline_prepost": {
+      "median_logG": -4.08145918927904,
+      "mad_logG": 0.20392078970327043,
+      "sigma_logG": 0.30233296281406874,
+      "pre_window": [
+        65.08,
+        65.11
+      ],
+      "post_window": [
+        65.45,
+        65.5
+      ]
+    },
+    "onset": {
+      "time_s": 65.11,
+      "logG": -3.096445110117382,
+      "threshold_logG": -2.872127338022765,
+      "is_auto_detected": true
+    },
+    "tail": {
+      "start_time_s": 65.262,
+      "end_time_s": 65.3864,
+      "threshold_logG": -3.3256267822438685
+    },
+    "return_to_background": {
+      "found": true,
+      "time_s": 65.3982,
+      "note": "Detected"
+    },
+    "plateau_baseline": {
+      "median_logG": -3.0186657805645614,
+      "mean_logG": -3.0217235780972396,
+      "stages": {
+        "early": {
+          "t_start": 65.11,
+          "t_end": 65.1604,
+          "mean": -3.0104161909379457,
+          "median": -3.002415558326741
+        },
+        "mid": {
+          "t_start": 65.1606,
+          "t_end": 65.2112,
+          "mean": -3.0171156429942734,
+          "median": -3.0160376579526216
+        },
+        "late": {
+          "t_start": 65.2114,
+          "t_end": 65.262,
+          "mean": -3.0375943830872196,
+          "median": -3.031438335352239
+        }
+      }
+    }
+  },
+  "raman": {
+    "background_baseline_prepost": {
+      "median_intensity": 895.609756097561,
+      "mad_intensity": 0.23170731707330106,
+      "sigma_intensity": 0.3435292682928761,
+      "pre_window": [
+        65.08,
+        65.11
+      ],
+      "post_window": [
+        65.45,
+        65.5
+      ]
+    },
+    "onset": {
+      "time_s": 65.13718,
+      "intensity": 907.404181184669,
+      "threshold": 896.6403439024397,
+      "is_auto_detected": true
+    },
+    "fall": {
+      "time_s": 65.46278,
+      "intensity": 895.609756097561,
+      "threshold": 896.2281087804881
+    },
+    "return_to_background": {
+      "found": true,
+      "time_s": 65.48038,
+      "note": "Detected"
+    },
+    "plateau_baseline": {
+      "median_intensity": 911.0148083623693,
+      "stages": {
+        "early": {
+          "t_start": 65.13718,
+          "t_end": 65.23398,
+          "mean": 910.1781358885019,
+          "median": 910.6620209059234
+        },
+        "mid": {
+          "t_start": 65.24278,
+          "t_end": 65.34838,
+          "mean": 911.4279013669258,
+          "median": 911.1010452961673
+        },
+        "late": {
+          "t_start": 65.35718,
+          "t_end": 65.46278,
+          "mean": 909.2948271240954,
+          "median": 912.2735191637631
+        }
+      }
+    }
+  }
+}
