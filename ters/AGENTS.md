@@ -77,6 +77,22 @@ When new evidence changes an interpretation:
 
 ---
 
+## Repository Persistence
+
+Treat GitHub as the durable source of truth for this project.
+
+Use the local workspace as a working copy for reading, analysis,
+validation, and temporary edits.
+
+When a completed task changes project files:
+
+- commit the durable changes back to GitHub by default
+- group related edits into a coherent commit
+- do not wait for a final computer-switching handoff unless the user asks
+- keep exploratory scratch work local unless it becomes part of the project record
+
+---
+
 ## Wiki Operations
 
 When maintaining the markdown wiki, follow three operations:
